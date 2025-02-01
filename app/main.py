@@ -8,14 +8,14 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    def find_and_assign_spouse(person: Person, spouse_type: str) -> bool:
+    def find_and_assign_spouse(man: dict, spouse_type: str) -> bool:
         if spouse_type in man and man[spouse_type] != None:
             person = Person.people[man["name"]]
             setattr(person, spouse_type, Person.people[man[spouse_type]])
             return True
         return False
 
-    for man in people:        
+    for man in people:
         person = Person(man["name"], man["age"])
         Person.people[person.name] = person
     for man in people:
