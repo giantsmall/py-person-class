@@ -9,7 +9,7 @@ class Person:
 
 def create_person_list(people: list) -> list:
     def find_and_assign_spouse(man: dict, spouse_type: str) -> bool:
-        if spouse_type in man and man[spouse_type] != None:
+        if spouse_type in man and not man[spouse_type] is None:
             person = Person.people[man["name"]]
             setattr(person, spouse_type, Person.people[man[spouse_type]])
             return True
